@@ -6,7 +6,6 @@ import { ApiDeleteTask } from '../script/api';
 import { useState } from 'react';
 import { ApiUpdateTask } from '../script/api';
 import { CounterDeadLineTime } from '../script/utils';
-import { ClipLoader } from 'react-spinners' 
 import toast from 'react-hot-toast';
 const Task = ({Task,handleDeleteTask,handleUpdateCompleteTask}) => {
   const [time,setTime] = useState("");
@@ -53,7 +52,7 @@ const Task = ({Task,handleDeleteTask,handleUpdateCompleteTask}) => {
             </div>
           </div>
           <div className='mt-auto flex justify-between'>
-            {time ? <span>Time: { time }</span> : <span>Time: <ClipLoader size={16} /></span>}
+            {time ? <span>Time: { time }</span> : <span>Time: </span>}
             <div className='flex mt-auto justify-end'>
                 <Link to={`task/${Task._id}`}><CiEdit className='cursor-pointer' size={24} /></Link>
                 <button className='cursor-pointer' onClick={DeleteTask} disabled={deleteLoading}><MdDeleteOutline color='red' size={24} /></button>
