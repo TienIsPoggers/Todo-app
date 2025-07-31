@@ -1,6 +1,5 @@
 import toast from 'react-hot-toast'
-const Api_URL = 'http://localhost:5001/api';
-
+ const Api_URL = import.meta.env.MODE === 'development' ? 'http://localhost:5001/api' : "/api";
 export const ApiGetAllTask = async () => {
     try{
         const res = await fetch(`${Api_URL}/tasks`);
